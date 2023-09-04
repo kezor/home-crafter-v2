@@ -3,6 +3,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image';
 
 
 const user = {
@@ -40,10 +41,12 @@ export default function TopBar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <img
+              <Image
                 className="h-8 w-8"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                alt="Your Company"
+                src="/home_crafter.png"
+                alt="Home Crafter"
+                width={32}
+                height={32}
               />
             </div>
             <div className="hidden md:block">
@@ -83,7 +86,7 @@ export default function TopBar() {
                   <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">Open user menu</span>
-                    <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                    <Image className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" width={32} height={32} />
                   </Menu.Button>
                 </div>
                 <Transition
@@ -151,7 +154,7 @@ export default function TopBar() {
         <div className="border-t border-gray-700 pb-3 pt-4">
           <div className="flex items-center px-5">
             <div className="flex-shrink-0">
-              <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+              <Image className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" width={'32'}  height={'32'}/>
             </div>
             <div className="ml-3">
               <div className="text-base font-medium leading-none text-white">{user.name}</div>
